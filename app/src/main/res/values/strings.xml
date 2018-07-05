@@ -36,6 +36,6 @@
     <string name="http_top_rated">/movie/top_rated</string>
 
     <!-- TODO !!! REMOVE THESE BEFORE SUBMITTING FOR REVIEW !!! -->
-    <string name="read_access_token_v4_auth">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhOWY3ZTcwYmE3NTliMTk5ODE3ZGFlOTNkOTY0NWIyMSIsInN1YiI6IjViMDQ2M2Y5MGUwYTI2MjNjNTAyYzVkZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XRttXoNRbMrVg61WG9UsmiG8ygj-fNkM6flMRpoiD7A</string>
-    <string name="api_key_v3_auth">a9f7e70ba759b199817dae93d9645b21</string>
+    <string name="read_access_token_v4_auth">...</string>
+    <string name="api_key_v3_auth">...</string>
 </resources>
