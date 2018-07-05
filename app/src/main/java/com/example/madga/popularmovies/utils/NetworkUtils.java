@@ -38,7 +38,7 @@ public class NetworkUtils {
     final static String apiKey = String.valueOf(R.string.api_key_v3_auth);
 
 /* The JSON for popular movies is this:
-* http://api.themoviedb.org/3/movie/popular?api_key=a9f7e70ba759b199817dae93d9645b21
+* http://api.themoviedb.org/3/movie/popular?api_key=...
 * */
     /**
      * Builds the URL used to query TheMovieDatabase.
