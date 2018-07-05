@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".DetailActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/horizontal_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"
+            tools:layout_editor_absoluteX="192dp"
+            tools:layout_editor_absoluteY="0dp"/>
+
+            <!-- Movie Title -->
+            <TextView
+                android:id="@+id/originalTitle_tv"
+                style="@style/originalNameStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="@string/original_title_label"/>
+
+                <!-- Image Poster -->
+                <ImageView
+                    android:id="@+id/posterThumb_iv"
+                    style="@style/moviePictureStyle"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/movie_poster_label"
+                    app:layout_constraintTop_toBottomOf="@+id/originalTitle_tv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/horizontal_middle"
+                    tools:src="@drawable/ic_launcher_background" />
+
+            <!-- Release Date -->
+            <TextView
+                android:id="@+id/releaseDate_tv"
+                style="@style/releaseDateStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/release_date"
+                app:layout_constraintVertical_bias="0.05"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toRightOf="@+id/horizontal_middle"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/posterThumb_iv" />
+
+            <!-- Movie Length -->
+            <TextView
+                android:id="@+id/movieLength_tv"
+                style="@style/movieLengthStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintTop_toBottomOf="@+id/releaseDate_tv"
+                app:layout_constraintLeft_toRightOf="@+id/horizontal_middle"
+                app:layout_constraintRight_toRightOf="@+id/releaseDate_tv"
+                android:text="@string/movie_length" />
+
+            <!-- User Rating -->
+            <TextView
+                android:id="@+id/userRating_tv"
+                style="@style/ratingStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintTop_toBottomOf="@+id/movieLength_tv"
+                app:layout_constraintLeft_toRightOf="@+id/horizontal_middle"
+                app:layout_constraintRight_toRightOf="@+id/releaseDate_tv"
+                android:text="@string/user_rating" />
+
+            <!--Mark as Fav button -->
+            <Button
+                android:id="@+id/markAsFavorite_tb"
+                style="@style/favoriteButtonStyle"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:text="@string/mark_as_fav"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toRightOf="@+id/horizontal_middle"
+                app:layout_constraintRight_toRightOf="@+id/releaseDate_tv"
+                app:layout_constraintTop_toBottomOf="@+id/userRating_tv" />
+
+            <ImageView
+                android:id="@+id/imageview_favorite"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintLeft_toRightOf="@+id/markAsFavorite_tb"
+                app:layout_constraintTop_toTopOf="@+id/markAsFavorite_tb"
+                android:src="@mipmap/star_disabled"
+                android:layout_gravity="bottom|end"/>
+
+            <!-- Synopsis -->
+            <TextView
+                android:id="@+id/overview_tv"
+                style="@style/synopsisStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/posterThumb_iv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/horizontal_line_1"
+                android:text="@string/plot_synopsis" />
+
+            <View
+                android:id="@+id/horizontal_line_1"
+                style="@style/horizontal_lineStyle"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toBottomOf="@+id/overview_tv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_error_message_display"
+                android:textSize="22sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/error_message"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="invisible" />
+
+        <!-- A progress bar that will be shown to users to indicate that data is loading -->
+            <ProgressBar
+                android:id="@+id/pb_loading_indicator"
+                android:layout_height="42dp"
+                android:layout_width="42dp"
+                android:layout_gravity="center"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_error_message_display"
+                android:visibility="invisible" />
+            <!-- this space reserved for future Trailer addition? -->
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
